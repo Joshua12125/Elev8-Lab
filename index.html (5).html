@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elev-8 Labs — Verified Research Compound Infrastructure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0A0C0E;
+    --panel:#12161A;
+    --panel-raised:#171C21;
+    --steel:#232B30;
+    --steel-soft:#1B2126;
+    --ice:#8FE3EC;
+    --ice-dim:#4E8B92;
+    --amber:#E8A559;
+    --paper:#EDEFEC;
+    --mute:#8B959A;
+    --mute-dim:#5C6569;
+    --radius:2px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ice);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--ice);
+    border-radius:50%;
+    box-shadow:0 0 8px var(--ice);
+    flex-shrink:0;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  :focus-visible{outline:2px solid var(--ice); outline-offset:3px;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* ---------- ANNOUNCEMENT BAR ---------- */
+  .announce{
+    background:var(--panel-raised);
+    border-bottom:1px solid var(--steel);
+    padding:0;
+  }
+  .announce-inner{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:10px 32px;
+    position:relative;
+    text-align:center;
+  }
+  .announce p{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    color:var(--mute);
+  }
+  .announce p strong{ color:var(--ice); font-weight:500; }
+  .announce p a{ color:var(--ice); text-decoration:underline; text-underline-offset:2px; }
+  .announce-close{
+    position:absolute; right:32px; top:50%; transform:translateY(-50%);
+    background:none; border:none; color:var(--mute-dim);
+    font-family:'JetBrains Mono',monospace; font-size:15px; line-height:1;
+    padding:4px 8px;
+  }
+  .announce-close:hover{ color:var(--paper); }
+  @media (max-width:640px){
+    .announce-inner{ padding:10px 52px 10px 16px; }
+    .announce p{ font-size:10.5px; }
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,12,14,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--steel);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+    display:flex; align-items:center; gap:8px;
+  }
+  .logo .mark{
+    width:9px; height:9px;
+    background:var(--ice);
+    box-shadow:0 0 10px var(--ice);
+  }
+  .navlinks{display:flex; gap:36px; font-size:14px; color:var(--mute);}
+  .navlinks a:hover{color:var(--paper);}
+  .navcta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    border:1px solid var(--ice-dim);
+    color:var(--ice);
+    padding:10px 18px;
+    transition:all .2s ease;
+  }
+  .navcta:hover{background:var(--ice); color:var(--void); border-color:var(--ice);}
+  @media (max-width:860px){ .navlinks{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 80px;
+    border-bottom:1px solid var(--steel);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--steel-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--steel-soft) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 60% at 30% 20%, black 0%, transparent 70%);
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:64px;
+    align-items:center;
+    position:relative;
+  }
+  @media (max-width:960px){ .hero-grid{grid-template-columns:1fr; gap:48px;} }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.08;
+    margin:22px 0 22px;
+  }
+  .hero h1 em{ color:var(--ice); font-style:normal; }
+  .hero p.lead{
+    font-size:17px;
+    color:var(--mute);
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px;}
+  .btn{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:15px 26px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:all .2s ease;
+    border-radius:var(--radius);
+    border:none;
+  }
+  .btn-primary{ background:var(--ice); color:var(--void); }
+  .btn-primary:hover{ background:#a9edf3; }
+  .btn-ghost{ border:1px solid var(--steel); color:var(--paper); background:none; }
+  .btn-ghost:hover{ border-color:var(--mute); }
+  .hero-note{
+    font-size:12.5px;
+    color:var(--mute-dim);
+    max-width:44ch;
+    padding-left:14px;
+    border-left:2px solid var(--steel);
+  }
+
+  /* ---------- COA LEDGER (signature element) ---------- */
+  .ledger{
+    background:var(--panel);
+    border:1px solid var(--steel);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .ledger-head{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 18px;
+    border-bottom:1px solid var(--steel);
+    background:var(--panel-raised);
+  }
+  .ledger-head .t{ font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.08em; color:var(--mute); text-transform:uppercase; }
+  .ledger-head .live{ display:flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--ice); }
+  .live .dot{ width:5px; height:5px; border-radius:50%; background:var(--ice); animation:pulse 2s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:1fr 1fr 0.7fr 0.9fr;
+    gap:10px;
+    padding:13px 18px;
+    border-bottom:1px solid var(--steel-soft);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    opacity:0;
+    transform:translateY(4px);
+    animation:rowIn .5s ease forwards;
+  }
+  .ledger-row:last-child{ border-bottom:none; }
+  .ledger-row .lbl{ color:var(--mute-dim); font-size:9.5px; text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:3px; }
+  .ledger-row .val{ color:var(--paper); }
+  .ledger-row .val.pass{ color:var(--ice); }
+  @keyframes rowIn{ to{ opacity:1; transform:translateY(0);} }
+  .ledger-row:nth-child(2){animation-delay:.08s;}
+  .ledger-row:nth-child(3){animation-delay:.16s;}
+  .ledger-row:nth-child(4){animation-delay:.24s;}
+  .ledger-row:nth-child(5){animation-delay:.32s;}
+  .ledger-foot{
+    padding:14px 18px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    color:var(--mute-dim);
+    background:var(--panel-raised);
+  }
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{ border-bottom:1px solid var(--steel); }
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    padding:36px 0;
+  }
+  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr); row-gap:28px;} }
+  .stat{ text-align:center; border-left:1px solid var(--steel); padding:0 16px; }
+  .stat:first-child{ border-left:none; }
+  .stat .n{ font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--ice); }
+  .stat .l{ font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute); margin-top:6px; }
+
+  /* ---------- SECTION HEADER ---------- */
+  .section{ padding:88px 0; border-bottom:1px solid var(--steel); }
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head h2{ font-size:clamp(26px,3vw,36px); margin-top:14px; }
+  .section-head p{ color:var(--mute); margin-top:14px; font-size:15.5px; }
+
+  /* ---------- TRUST CARDS ---------- */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--steel);
+    border:1px solid var(--steel);
+  }
+  @media (max-width:860px){ .cards{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cards{grid-template-columns:1fr;} }
+  .card{ background:var(--panel); padding:32px 28px; }
+  .card .idx{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ice-dim); }
+  .card h3{ font-size:17px; margin:14px 0 10px; }
+  .card p{ font-size:14px; color:var(--mute); line-height:1.65; }
+
+  /* ---------- QUALITY PROMISE ---------- */
+  .promise-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px 40px;
+  }
+  @media (max-width:760px){ .promise-grid{grid-template-columns:1fr;} }
+  .promise-item{
+    display:flex;
+    gap:16px;
+    padding:22px 0;
+    border-bottom:1px solid var(--steel);
+  }
+  .promise-item .check{
+    flex-shrink:0;
+    width:26px; height:26px;
+    border:1px solid var(--ice-dim);
+    color:var(--ice);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+  }
+  .promise-item h3{ font-size:15px; margin-bottom:5px; }
+  .promise-item p{ font-size:13.5px; color:var(--mute); line-height:1.6; }
+
+  /* ---------- PROCESS ---------- */
+  .process{ display:flex; gap:0; overflow-x:auto; padding-bottom:8px; }
+  @media (max-width:860px){ .process{flex-direction:column;} }
+  .pstep{
+    flex:1; min-width:180px;
+    padding:0 24px 0 0;
+    position:relative;
+  }
+  .pstep:not(:last-child)::after{
+    content:"";
+    position:absolute; top:15px; right:0;
+    width:calc(100% - 40px); height:1px;
+    background:var(--steel);
+  }
+  @media (max-width:860px){
+    .pstep{padding:0 0 32px 0;}
+    .pstep:not(:last-child)::after{display:none;}
+  }
+  .pstep .pn{
+    width:30px; height:30px;
+    border:1px solid var(--ice-dim);
+    color:var(--ice);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:16px;
+  }
+  .pstep h3{ font-size:15px; margin-bottom:8px; }
+  .pstep p{ font-size:13.5px; color:var(--mute); }
+
+  /* ---------- COMPLIANCE BAND ---------- */
+  .compliance{
+    background:var(--panel);
+    border-top:1px solid var(--amber);
+    border-bottom:1px solid var(--amber);
+    padding:56px 0;
+  }
+  .compliance-inner{ display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start; }
+  @media (max-width:760px){ .compliance-inner{grid-template-columns:1fr;} }
+  .compliance .tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--amber);
+    border:1px solid var(--amber);
+    padding:8px 14px;
+    white-space:nowrap;
+    height:fit-content;
+  }
+  .compliance h2{ font-size:20px; margin-bottom:12px; color:var(--paper); }
+  .compliance p{ color:var(--mute); font-size:14.5px; max-width:70ch; }
+  .compliance p + p{ margin-top:10px; }
+
+  /* ---------- FAQ ---------- */
+  .faq{ max-width:820px; }
+  .faq-item{
+    border-bottom:1px solid var(--steel);
+  }
+  .faq-item summary{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:22px 4px;
+    cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--paper);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item .plus{
+    flex-shrink:0;
+    width:22px; height:22px;
+    border:1px solid var(--steel);
+    color:var(--ice);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    transition:transform .2s ease;
+  }
+  .faq-item[open] .plus{ transform:rotate(45deg); border-color:var(--ice-dim); }
+  .faq-item .a{
+    padding:0 4px 24px;
+    font-size:14.5px;
+    color:var(--mute);
+    max-width:68ch;
+    line-height:1.7;
+  }
+  .faq-item .a strong{ color:var(--paper); font-weight:500; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--steel); border:1px solid var(--steel); }
+  @media (max-width:860px){ .quotes{grid-template-columns:1fr;} }
+  .quote{ background:var(--panel); padding:30px 26px; display:flex; flex-direction:column; justify-content:space-between; min-height:220px; }
+  .quote p.txt{ font-size:14.5px; color:var(--paper); line-height:1.7; }
+  .quote .who{ margin-top:20px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--ice); }
+  .quote .role{ font-size:11.5px; color:var(--mute-dim); margin-top:2px; }
+
+  /* ---------- CTA BAND ---------- */
+  .ctaband{
+    padding:90px 0;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid var(--steel);
+  }
+  .ctaband h2{ font-size:clamp(28px,3.4vw,42px); max-width:20ch; margin:0 auto 18px; }
+  .ctaband p{ color:var(--mute); max-width:52ch; margin:0 auto 34px; font-size:15.5px; }
+  .ctaband .hero-ctas{ justify-content:center; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+  }
+  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr; gap:44px;} }
+  .contact-info .row{
+    display:flex;
+    gap:16px;
+    padding:20px 0;
+    border-bottom:1px solid var(--steel);
+  }
+  .contact-info .row:first-child{ padding-top:0; }
+  .contact-info .ic{
+    flex-shrink:0;
+    width:34px; height:34px;
+    border:1px solid var(--steel);
+    color:var(--ice);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+  }
+  .contact-info h4{ font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute-dim); margin-bottom:4px; }
+  .contact-info a, .contact-info p{ font-size:14.5px; color:var(--paper); }
+  .contact-info .sub{ font-size:12.5px; color:var(--mute); margin-top:2px; }
+
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:560px){ .form-grid{grid-template-columns:1fr;} }
+  .field{ display:flex; flex-direction:column; gap:8px; margin-bottom:18px; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--mute);
+  }
+  .field input, .field select, .field textarea{
+    background:var(--panel);
+    border:1px solid var(--steel);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    padding:13px 14px;
+    border-radius:var(--radius);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;
+    border-color:var(--ice-dim);
+  }
+  .field textarea{ resize:vertical; min-height:110px; }
+  .form-note{ font-size:12px; color:var(--mute-dim); margin-top:4px; max-width:60ch; }
+  .form-status{ font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--ice); margin-top:14px; display:none; }
+  .form-status.show{ display:block; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ padding:56px 0 40px; }
+  .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  .foot-col h4{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--mute-dim); margin-bottom:16px; }
+  .foot-col a{ display:block; font-size:13.5px; color:var(--mute); margin-bottom:11px; }
+  .foot-col a:hover{ color:var(--paper); }
+  .foot-col p{ font-size:13.5px; color:var(--mute); max-width:34ch; line-height:1.7; }
+  .foot-legal{
+    border-top:1px solid var(--steel);
+    padding-top:26px;
+    font-size:12px;
+    color:var(--mute-dim);
+    line-height:1.7;
+  }
+  .foot-legal .copy{ margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11px; }
+</style>
+</head>
+<body>
+
+<div class="announce" id="announceBar">
+  <div class="wrap announce-inner">
+    <p><strong>Cold-chain shipping</strong> on every order · COA on file for every lot number · <a href="#compliance">Read our research-use policy</a></p>
+    <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">✕</button>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="https://elev-8labs.com" class="logo"><span class="mark"></span>ELEV-8 LABS</a>
+      <div class="navlinks">
+        <a href="#infrastructure">Infrastructure</a>
+        <a href="#process">Verification Process</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="https://elev-8labs.com" class="navcta">BROWSE CATALOG →</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">RESEARCH-USE COMPOUNDS · THIRD-PARTY VERIFIED</div>
+      <h1>Documentation-grade<br>infrastructure for <em>peptide research.</em></h1>
+      <p class="lead">Elev-8 Labs exists for one reason: to remove uncertainty from sourcing research compounds. Every lot is independently tested, logged, and shipped cold — so your data starts from a known baseline, not a guess.</p>
+      <div class="hero-ctas">
+        <a href="https://elev-8labs.com" class="btn btn-primary">Browse Catalog →</a>
+        <a href="https://elev-8labs.com" class="btn btn-ghost">Request Lab Credentials</a>
+      </div>
+      <p class="hero-note">For research and laboratory use only. Not for human or veterinary consumption. Access is restricted to qualified researchers purchasing for in-vitro use.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-head">
+        <span class="t">Lot Verification Log</span>
+        <span class="live"><span class="dot"></span>UPDATED DAILY</span>
+      </div>
+      <div class="ledger-row">
+        <div><span class="lbl">Lot ID</span><span class="val">E8-70214</span></div>
+        <div><span class="lbl">Method</span><span class="val">HPLC / MS</span></div>
+        <div><span class="lbl">Purity</span><span class="val">99.3%</span></div>
+        <div><span class="lbl">Status</span><span class="val pass">✓ VERIFIED</span></div>
+      </div>
+      <div class="ledger-row">
+        <div><span class="lbl">Lot ID</span><span class="val">E8-70219</span></div>
+        <div><span class="lbl">Method</span><span class="val">HPLC / MS</span></div>
+        <div><span class="lbl">Purity</span><span class="val">99.6%</span></div>
+        <div><span class="lbl">Status</span><span class="val pass">✓ VERIFIED</span></div>
+      </div>
+      <div class="ledger-row">
+        <div><span class="lbl">Lot ID</span><span class="val">E8-70225</span></div>
+        <div><span class="lbl">Method</span><span class="val">HPLC / MS</span></div>
+        <div><span class="lbl">Purity</span><span class="val">99.1%</span></div>
+        <div><span class="lbl">Status</span><span class="val pass">✓ VERIFIED</span></div>
+      </div>
+      <div class="ledger-row">
+        <div><span class="lbl">Lot ID</span><span class="val">E8-70231</span></div>
+        <div><span class="lbl">Method</span><span class="val">HPLC / MS</span></div>
+        <div><span class="lbl">Purity</span><span class="val">99.4%</span></div>
+        <div><span class="lbl">Status</span><span class="val pass">✓ VERIFIED</span></div>
+      </div>
+      <div class="ledger-foot">COA available on request for every lot number · support@elev-8labs.com</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="n">99%+</div><div class="l">Avg. Verified Purity</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Lots With Published COA</div></div>
+    <div class="stat"><div class="n">1–3d</div><div class="l">Cold-Chain Dispatch</div></div>
+    <div class="stat"><div class="n">7/7</div><div class="l">Technical Support Coverage</div></div>
+  </div>
+</section>
+
+<section class="section" id="infrastructure">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">WHY LABS SOURCE THROUGH US</div>
+      <h2>Built for people who have to defend their data.</h2>
+      <p>Not marketing claims — infrastructure. Each piece below is something a QC reviewer or PI can actually check.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="idx mono">01</div>
+        <h3>Independent Verification</h3>
+        <p>Every batch is HPLC and mass-spec tested by accredited third-party laboratories before it ships — not self-certified.</p>
+      </div>
+      <div class="card">
+        <div class="idx mono">02</div>
+        <h3>Certificates of Analysis</h3>
+        <p>Purity, identity, and mass-match data on file for every lot, tied to a traceable lot number on request.</p>
+      </div>
+      <div class="card">
+        <div class="idx mono">03</div>
+        <h3>Cold-Chain Manufacturing</h3>
+        <p>Lyophilized in ISO-grade facilities and shipped in insulated cold-pack mailers to preserve integrity in transit.</p>
+      </div>
+      <div class="card">
+        <div class="idx mono">04</div>
+        <h3>Controlled Access</h3>
+        <p>Purchasing is limited to verified researchers acquiring compounds strictly for in-vitro and laboratory use.</p>
+      </div>
+      <div class="card">
+        <div class="idx mono">05</div>
+        <h3>Secure Checkout</h3>
+        <p>SSL-encrypted, privacy-conscious checkout with a range of supported payment options.</p>
+      </div>
+      <div class="card">
+        <div class="idx mono">06</div>
+        <h3>Technical Support</h3>
+        <p>Questions are answered by staff with laboratory backgrounds — not a generic support script.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quality">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QUALITY PROMISE</div>
+      <h2>What we guarantee on every order.</h2>
+      <p>A short, specific list — the kind you could hold us to.</p>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>Third-party tested, every lot</h3>
+          <p>No lot ships without independent HPLC/MS verification first — not periodic spot checks.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>COA matched to lot number</h3>
+          <p>Your Certificate of Analysis corresponds to the exact lot you receive, not a representative sample.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>Cold-chain packaging, always</h3>
+          <p>Insulated, tracked shipping on every order to protect compound integrity in transit.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>Transparent research-use terms</h3>
+          <p>No vague disclaimers — our research-use policy states plainly what these products are and are not for.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>Responsive technical support</h3>
+          <p>Direct line to staff who can speak to testing methods and documentation, not a ticket queue.</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="check">✓</div>
+        <div>
+          <h3>Discreet, secure logistics</h3>
+          <p>Privacy-conscious checkout and shipping for verified research accounts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FROM SYNTHESIS TO YOUR BENCH</div>
+      <h2>Every lot follows the same chain of custody.</h2>
+      <p>Five checkpoints, in order, before a compound is cleared to ship.</p>
+    </div>
+    <div class="process">
+      <div class="pstep"><div class="pn mono">01</div><h3>Synthesis</h3><p>Compound produced to spec under controlled manufacturing conditions.</p></div>
+      <div class="pstep"><div class="pn mono">02</div><h3>HPLC / MS Testing</h3><p>Independent lab verifies purity and identity against reference standards.</p></div>
+      <div class="pstep"><div class="pn mono">03</div><h3>Lyophilization</h3><p>Vials are freeze-dried in ISO-grade cleanroom conditions for stability.</p></div>
+      <div class="pstep"><div class="pn mono">04</div><h3>COA Issued</h3><p>Lot number, purity, and test data are logged and published on request.</p></div>
+      <div class="pstep"><div class="pn mono">05</div><h3>Cold-Chain Ship</h3><p>Dispatched within 1–3 business days in insulated, tracked packaging.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="compliance" id="compliance">
+  <div class="wrap compliance-inner">
+    <div class="tag">Read Before Ordering</div>
+    <div>
+      <h2>Research use only. No exceptions.</h2>
+      <p>Every compound sold by Elev-8 Labs is intended strictly for in-vitro laboratory research. Nothing on this site is a drug, supplement, or medical product, and nothing is intended for human or veterinary administration. Claims here describe laboratory findings only — not benefits, outcomes, dosing, or use in or on the human body.</p>
+      <p>Purchasers must be qualified researchers and are solely responsible for complying with all applicable laws in their jurisdiction. Statements have not been evaluated by the FDA. See our <a href="https://elev-8labs.com" style="color:var(--amber); text-decoration:underline;">Research Disclaimer</a> for full terms.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FREQUENTLY ASKED</div>
+      <h2>Questions researchers actually ask.</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Are these products for human consumption?<span class="plus">+</span></summary>
+        <div class="a"><strong>No.</strong> Every product sold by Elev-8 Labs is strictly for laboratory research use. Nothing we sell is a drug, supplement, or medical product, and nothing is intended for human or veterinary use, consumption, or administration in any form. Purchasing requires attestation that the compound will be used solely for in-vitro research by a qualified buyer.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is every lot tested before it ships?<span class="plus">+</span></summary>
+        <div class="a">Yes. Every lot is verified by an accredited third-party laboratory using HPLC and mass spectrometry before it's cleared to ship — we don't rely on self-certification or periodic sampling.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I get a Certificate of Analysis?<span class="plus">+</span></summary>
+        <div class="a">Yes. A COA is available for every lot number, matched to the specific lot you receive. Request one through the <a href="#contact" style="color:var(--ice); text-decoration:underline;">contact form</a> or by emailing support directly.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How is my order shipped and stored?<span class="plus">+</span></summary>
+        <div class="a">Orders are dispatched within 1–3 business days in insulated, cold-pack mailers to preserve compound integrity in transit. On arrival, store according to the handling guidance included with your COA.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Who can purchase from Elev-8 Labs?<span class="plus">+</span></summary>
+        <div class="a">Access is limited to verified researchers and institutions purchasing for laboratory or in-vitro research purposes. We may request credentials or institutional affiliation before fulfilling an order.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I have a question about a specific lot?<span class="plus">+</span></summary>
+        <div class="a">Reach our support team with the lot number from your order or COA — staff with laboratory backgrounds can walk through testing methodology and results directly.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FROM THE BENCH</div>
+      <h2>What researchers report back.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p class="txt">"COAs match our independent assay results consistently. Reconstitution behavior is stable batch to batch, which is what an in-vitro workflow needs."</p>
+        <div><div class="who">Dr. K. Ortiz</div><div class="role">Postdoctoral Researcher, Cell Biology</div></div>
+      </div>
+      <div class="quote">
+        <p class="txt">"Lot numbers tie cleanly back to the COA. That's a small thing most suppliers in this category skip — it makes our records defensible."</p>
+        <div><div class="who">Dr. S. Walsh</div><div class="role">Pharmacology Department</div></div>
+      </div>
+      <div class="quote">
+        <p class="txt">"Documentation is thorough enough to satisfy our internal QC review without extra back-and-forth."</p>
+        <div><div class="who">J. Holloway</div><div class="role">Lab Manager, Contract Research</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ctaband">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center; margin-bottom:18px;">VERIFIED RESEARCH COMPOUNDS</div>
+    <h2>Source your next lot with documentation that holds up.</h2>
+    <p>Browse the full catalog of third-party tested compounds, each with a Certificate of Analysis on file.</p>
+    <div class="hero-ctas">
+      <a href="https://elev-8labs.com" class="btn btn-primary">Browse Catalog →</a>
+      <a href="https://elev-8labs.com" class="btn btn-ghost">Talk to Support</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">GET IN TOUCH</div>
+      <h2>Talk to someone who's read the COA.</h2>
+      <p>Questions about a lot, a pending order, or research-use terms — reach us directly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="row">
+          <div class="ic">@</div>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:support@elev-8labs.com">support@elev-8labs.com</a>
+            <p class="sub">General questions, order status, COA requests</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="ic">◷</div>
+          <div>
+            <h4>Support Hours</h4>
+            <p>Monday–Friday, 9:00–18:00 ET</p>
+            <p class="sub">Technical questions answered by lab-background staff</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="ic">⌘</div>
+          <div>
+            <h4>Institutional Access</h4>
+            <a href="mailto:support@elev-8labs.com?subject=Institutional%20Access%20Request">Request lab credentials</a>
+            <p class="sub">For labs and institutions setting up a verified account</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" onsubmit="return handleContactSubmit(event)">
+          <div class="form-grid">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" name="topic">
+              <option>General inquiry</option>
+              <option>COA / lot number request</option>
+              <option>Order status</option>
+              <option>Institutional access</option>
+              <option>Technical / testing question</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message →</button>
+          <p class="form-note">By submitting, you confirm you are contacting us regarding research or laboratory use. This form does not process orders for human or veterinary use of any kind.</p>
+          <p class="form-status" id="formStatus">Thanks — your message has been queued. We'll reply from support@elev-8labs.com within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="logo" style="margin-bottom:16px;"><span class="mark"></span>ELEV-8 LABS</div>
+        <p>Research-grade peptides and accessories for laboratory use. Third-party tested for purity and identity. Every product ships with a Certificate of Analysis.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="https://elev-8labs.com">Products</a>
+        <a href="https://elev-8labs.com">Partner Program</a>
+        <a href="https://elev-8labs.com">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Account</h4>
+        <a href="https://elev-8labs.com">Track Order</a>
+        <a href="https://elev-8labs.com">My Account</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="https://elev-8labs.com">Research Disclaimer</a>
+        <a href="https://elev-8labs.com">Terms of Service</a>
+        <a href="https://elev-8labs.com">Privacy Policy</a>
+        <a href="https://elev-8labs.com">Shipping Policy</a>
+        <a href="https://elev-8labs.com">Refund Policy</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      All products on this website are intended for research and laboratory use only. These products are not drugs, supplements, or medications and are not for human or veterinary consumption. Statements have not been evaluated by the FDA. These products are not intended to diagnose, treat, cure, or prevent any disease.
+      <div class="copy">© 2026 Elev-8 Labs. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Announcement bar dismiss
+  document.getElementById('announceClose').addEventListener('click', function(){
+    document.getElementById('announceBar').style.display = 'none';
+  });
+
+  // Contact form (front-end only — no backend wired up yet)
+  function handleContactSubmit(e){
+    e.preventDefault();
+    var status = document.getElementById('formStatus');
+    status.classList.add('show');
+    document.getElementById('contactForm').reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>
