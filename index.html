@@ -1,29 +1,270 @@
-Done! I made the first visual upgrade.
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elev‑8 Labs</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#07111b;color:#eef}
+header{position:sticky;top:0;background:#081522ee;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:16px 6%;border-bottom:1px solid #214f77}
+header nav a{color:#fff;text-decoration:none;margin:0 10px}
+.hero{padding:90px 6%;text-align:center;background:radial-gradient(circle,#17456f,#07111b)}
+.hero h1{font-size:56px;margin:0}.hero p{max-width:720px;margin:20px auto;color:#bfd2df}
+.btn{display:inline-block;margin:8px;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold}
+.primary{background:#4cc4ff;color:#04111b}.secondary{border:1px solid #4cc4ff;color:#fff}
+section{padding:60px 6%}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:#102235;border:1px solid #27587f;border-radius:18px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.art{height:210px;background:radial-gradient(circle,#3ca9ff,#102235 70%);display:flex;align-items:center;justify-content:center;font-weight:bold;text-align:center;padding:20px}
+.content{padding:18px}.badge{background:#1f6ea8;padding:5px 10px;border-radius:20px;font-size:12px}
+input,select{padding:12px;border:none;border-radius:8px}
+.filter{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+footer{padding:40px;text-align:center;border-top:1px solid #27587f;color:#a9bfd2}
 
-### ✅ Changes made
+.card:hover .art{filter:drop-shadow(0 0 20px #5fd4ff);transform:scale(1.03);}
+.art{transition:.35s}
 
-* Replaced **"Main Website"** with **"Explore Research Materials →"**
-* Upgraded every product image area by adding:
-
-  * 🧪 A glowing laboratory vial illustration
-  * 💡 Blue neon halo behind the vial
-  * ✅ **COA** badge
-  * 🧫 **Lab Tested** badge
-  * ✨ Hover glow effect on the artwork
-
-You can download the updated version here:
-
-**📄 [Elev8_Labs_OnePage_Website_v2.html](sandbox:/mnt/data/Elev8_Labs_OnePage_Website_v2.html)**
-
-### Next upgrade (recommended)
-
-The next version can make the site look much closer to a premium biotech brand by adding:
-
-* Animated floating DNA molecules in the background
-* Glassmorphism navigation bar
-* Premium icons throughout the site
-* Better product cards with a more realistic 3D vial design
-* Scroll animations
-* A more polished hero section similar to leading biotech/research websites
-
-That next upgrade will make it look far less like a basic HTML page and much more like a professionally designed commercial website.
+</style></head><body>
+<header><strong>Elev‑8 Labs</strong><nav>
+<a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#coa">COA</a><a href="#contact">Contact</a>
+</nav></header>
+<section class="hero" id="home">
+<h1>Research Without Compromise</h1>
+<p>Premium laboratory research materials with quality-focused presentation, COA availability and direct product pages.</p>
+<a class="btn primary" href="#products">Browse Catalog</a>
+<a class="btn secondary" href="https://elev-8labs.com/">Explore Research Materials →</a>
+</section>
+<section id="products"><h2>Research Catalog</h2>
+<div class="filter"><input id="q" placeholder="Search..."><select id="cat"><option>All</option>
+<option>Metabolic Research</option><option>Cellular Research</option><option>Longevity Research</option><option>Recovery Research</option><option>Research Peptide</option><option>Laboratory Supply</option></select></div>
+<div class="cards">
+<div class="card" data-name="glp‑3(rt) 10/20mg" data-cat="Metabolic Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">GLP‑3(RT) 10/20mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Metabolic Research</span>
+<h3>GLP‑3(RT) 10/20mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glp-3rt-10-20mg/">Learn More</a>
+</div></div><div class="card" data-name="ghk‑cu 50mg" data-cat="Cellular Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">GHK‑Cu 50mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Cellular Research</span>
+<h3>GHK‑Cu 50mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/ghk-cu/">Learn More</a>
+</div></div><div class="card" data-name="mots‑c 10/40mg" data-cat="Metabolic Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">MOTS‑C 10/40mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Metabolic Research</span>
+<h3>MOTS‑C 10/40mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/mots-c-10-40mg/">Learn More</a>
+</div></div><div class="card" data-name="tesamorelin 10mg" data-cat="Metabolic Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">Tesamorelin 10mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Metabolic Research</span>
+<h3>Tesamorelin 10mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/tesamorelin/">Learn More</a>
+</div></div><div class="card" data-name="klow 80mg" data-cat="Cellular Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">KLOW 80mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Cellular Research</span>
+<h3>KLOW 80mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/klow-80mg/">Learn More</a>
+</div></div><div class="card" data-name="glow 70mg" data-cat="Cellular Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">GLOW 70mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Cellular Research</span>
+<h3>GLOW 70mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glow-70mg/">Learn More</a>
+</div></div><div class="card" data-name="nad+ 500/1000mg" data-cat="Longevity Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">NAD+ 500/1000mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Longevity Research</span>
+<h3>NAD+ 500/1000mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/nad-500-1000mg/">Learn More</a>
+</div></div><div class="card" data-name="glutathione 1500mg" data-cat="Cellular Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">Glutathione 1500mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Cellular Research</span>
+<h3>Glutathione 1500mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glutathione-1500mg/">Learn More</a>
+</div></div><div class="card" data-name="melanotan ii" data-cat="Research Peptide">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">Melanotan II</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Research Peptide</span>
+<h3>Melanotan II</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/melanotan-ii/">Learn More</a>
+</div></div><div class="card" data-name="epithalon 10mg" data-cat="Longevity Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">Epithalon 10mg</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Longevity Research</span>
+<h3>Epithalon 10mg</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/epithalon-10mg/">Learn More</a>
+</div></div><div class="card" data-name="bac water" data-cat="Laboratory Supply">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">BAC Water</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Laboratory Supply</span>
+<h3>BAC Water</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/bac-water-3-10ml/">Learn More</a>
+</div></div><div class="card" data-name="bpc‑157 + tb‑500" data-cat="Recovery Research">
+<div class="art">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+<div style="position:relative;width:82px;height:120px;">
+<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
+<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
+<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+</div>
+<div style="font-weight:bold">BPC‑157 + TB‑500</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
+<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+</div>
+</div></div><div class="content">
+<span class="badge">Recovery Research</span>
+<h3>BPC‑157 + TB‑500</h3>
+<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
+<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/bpc-157-tb-500/">Learn More</a>
+</div></div>
+</div></section>
+<section id="about"><h2>About Elev‑8 Labs</h2><p>Focused on premium laboratory research materials with an emphasis on quality, documentation and professional presentation.</p></section>
+<section id="coa"><h2>COA & Quality</h2><p>Certificates of Analysis are available for research materials where applicable. Products are intended for research use only.</p></section>
+<section id="contact"><h2>Contact</h2><p>Visit the official website for product inquiries and support.</p>
+<a class="btn primary" href="https://elev-8labs.com/">Visit Elev‑8 Labs</a></section>
+<footer>Research Use Only • Not intended for human consumption • © Elev‑8 Labs Concept</footer>
+<script>
+const q=document.getElementById('q'),cat=document.getElementById('cat');
+function f(){document.querySelectorAll('.card').forEach(x=>{
+const ok1=x.dataset.name.includes(q.value.toLowerCase());
+const ok2=cat.value==='All'||x.dataset.cat===cat.value;
+x.style.display=(ok1&&ok2)?'block':'none';
+});}
+q.oninput=f;cat.onchange=f;
+</script></body></html>
