@@ -1,270 +1,666 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elev‑8 Labs</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#07111b;color:#eef}
-header{position:sticky;top:0;background:#081522ee;backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:16px 6%;border-bottom:1px solid #214f77}
-header nav a{color:#fff;text-decoration:none;margin:0 10px}
-.hero{padding:90px 6%;text-align:center;background:radial-gradient(circle,#17456f,#07111b)}
-.hero h1{font-size:56px;margin:0}.hero p{max-width:720px;margin:20px auto;color:#bfd2df}
-.btn{display:inline-block;margin:8px;padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:bold}
-.primary{background:#4cc4ff;color:#04111b}.secondary{border:1px solid #4cc4ff;color:#fff}
-section{padding:60px 6%}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:#102235;border:1px solid #27587f;border-radius:18px;overflow:hidden;transition:.3s}
-.card:hover{transform:translateY(-8px)}
-.art{height:210px;background:radial-gradient(circle,#3ca9ff,#102235 70%);display:flex;align-items:center;justify-content:center;font-weight:bold;text-align:center;padding:20px}
-.content{padding:18px}.badge{background:#1f6ea8;padding:5px 10px;border-radius:20px;font-size:12px}
-input,select{padding:12px;border:none;border-radius:8px}
-.filter{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
-footer{padding:40px;text-align:center;border-top:1px solid #27587f;color:#a9bfd2}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Elev-8 Labs — third-party verified, documentation-first supplier. Every batch independently tested. COA on file. Fast US shipping from Florida."/>
+  <title>Elev-8 Labs | Verified. Documented. Trusted.</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="googlebot" content="noindex, nofollow"/>
 
-.card:hover .art{filter:drop-shadow(0 0 20px #5fd4ff);transform:scale(1.03);}
-.art{transition:.35s}
+  <!-- TikTok Pixel -->
+  
 
-</style></head><body>
-<header><strong>Elev‑8 Labs</strong><nav>
-<a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#coa">COA</a><a href="#contact">Contact</a>
-</nav></header>
-<section class="hero" id="home">
-<h1>Research Without Compromise</h1>
-<p>Premium laboratory research materials with quality-focused presentation, COA availability and direct product pages.</p>
-<a class="btn primary" href="#products">Browse Catalog</a>
-<a class="btn secondary" href="https://elev-8labs.com/">Explore Research Materials →</a>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:  #080808;
+      --ink:    #0D0D0D;
+      --ink2:   #121212;
+      --ink3:   #181818;
+      --border: #222222;
+      --border2:#2E2E2E;
+      --white:  #F5F5F5;
+      --muted:  #777777;
+      --faint:  #444444;
+      --mono:   'Courier New', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── ANN BAR ──────────────────────────────────────── */
+    .ann-bar {
+      background: var(--white); color: var(--black);
+      text-align: center; padding: 10px 16px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: nowrap; overflow: hidden;
+      white-space: nowrap;
+    }
+    .ann-bar span { padding: 0 16px; }
+    .ann-sep { opacity: 0.3; padding: 0 !important; }
+    /* On mobile — show only first item, hide the rest */
+    @media (max-width: 640px) {
+      .ann-bar { padding: 10px 12px; font-size: 10px; letter-spacing: 0.1em; }
+      .ann-bar span:not(:first-child) { display: none; }
+      .ann-sep { display: none; }
+    }
+
+    /* ── NAV ──────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(8,8,8,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 6vw; display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .nav-logo img { height: 44px; width: auto; object-fit: contain; filter: brightness(10); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--white) !important; color: var(--black) !important; padding: 9px 22px; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.12em !important; text-transform: uppercase; transition: opacity 0.2s !important; }
+    .nav-cta:hover { opacity: 0.85 !important; }
+    .nav-mobile-cta { display: none; background: var(--white); color: var(--black); padding: 8px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 92vh; display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 6vw 80px; position: relative; overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute; top: -400px; right: -300px; width: 900px; height: 900px;
+      border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--mono); font-size: 11px; color: var(--muted);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 36px; border: 1px solid var(--border); padding: 7px 14px; width: fit-content;
+    }
+    .hero-label::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--white);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.75); } }
+
+    .hero-headline {
+      font-size: clamp(48px, 8vw, 100px); line-height: 0.95; font-weight: 800;
+      max-width: 1000px; margin-bottom: 32px; position: relative; z-index: 1;
+      letter-spacing: -0.03em; color: var(--white);
+    }
+    .hero-headline .outline { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.3); }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.5vw, 18px); color: var(--muted); max-width: 560px;
+      line-height: 1.75; margin-bottom: 52px; font-weight: 300; position: relative; z-index: 1;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; position: relative; z-index: 1; margin-bottom: 72px; }
+
+    .btn-solid {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); color: var(--black); font-weight: 700; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-solid:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--muted); font-weight: 600; font-size: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px;
+      border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+    .hero-proof { display: flex; gap: 0; flex-wrap: wrap; border: 1px solid var(--border); position: relative; z-index: 1; width: fit-content; }
+    .proof-item { display: flex; flex-direction: column; gap: 4px; padding: 20px 36px; border-right: 1px solid var(--border); }
+    .proof-item:last-child { border-right: none; }
+    .proof-num { font-size: 30px; font-weight: 800; color: var(--white); line-height: 1; letter-spacing: -0.02em; }
+    .proof-label { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+
+    /* ── MARQUEE ──────────────────────────────────────── */
+    .marquee-wrap { background: var(--ink2); overflow: hidden; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .marquee-inner { display: inline-flex; animation: scroll 30s linear infinite; white-space: nowrap; }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); padding: 0 40px;
+    }
+    .marquee-item::after { content: '✕'; color: var(--border2); font-size: 8px; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ── SHARED ───────────────────────────────────────── */
+    .section { padding: 100px 6vw; }
+    .section-ink2 { background: var(--ink2); }
+    .section-ink { background: var(--ink); }
+    .section-black { background: var(--black); }
+    .section-border { border-top: 1px solid var(--border); }
+
+    .eyebrow { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--muted); }
+
+    .section-h { font-size: clamp(32px, 4.5vw, 58px); font-weight: 800; line-height: 1.05; margin-bottom: 20px; letter-spacing: -0.025em; }
+    .section-lead { font-size: 16px; color: var(--muted); line-height: 1.78; max-width: 640px; font-weight: 300; }
+
+    /* ── WHY GRID ─────────────────────────────────────── */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 60px; border: 1px solid var(--border); }
+    .why-card { background: var(--ink2); padding: 44px 36px; position: relative; overflow: hidden; transition: background 0.2s; }
+    .why-card:hover { background: var(--ink3); }
+    .why-card-num { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 20px; }
+    .why-card-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 14px; line-height: 1.2; letter-spacing: -0.01em; }
+    .why-card-body { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+    .why-card-ghost { position: absolute; bottom: -10px; right: 12px; font-size: 80px; font-weight: 800; color: rgba(255,255,255,0.025); line-height: 1; }
+
+    /* ── PILLARS ──────────────────────────────────────── */
+    .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 60px; }
+    .pillar { background: var(--ink3); padding: 36px 28px; text-align: center; border-left: 2px solid transparent; transition: border-color 0.2s; }
+    .pillar:hover { border-color: var(--white); }
+    .pillar-num { font-size: 40px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .pillar-lbl { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; }
+
+    /* ── PROCESS ──────────────────────────────────────── */
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+    .process-steps { display: flex; flex-direction: column; }
+    .proc-step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .proc-step:first-child { border-top: 1px solid var(--border); }
+    .proc-num { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.12em; flex-shrink: 0; padding-top: 4px; width: 36px; }
+    .proc-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .proc-body { font-size: 13px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+    .process-sidebar { position: sticky; top: 100px; }
+    .process-stat-card { background: var(--ink3); border: 1px solid var(--border); overflow: hidden; }
+    .pstat-head { background: var(--white); color: var(--black); padding: 18px 28px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    .pstat-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .pstat-row:last-child { border-bottom: none; }
+    .pstat-label { color: var(--muted); }
+    .pstat-val { font-family: var(--mono); font-size: 11px; color: var(--white); background: rgba(255,255,255,0.06); padding: 3px 10px; letter-spacing: 0.06em; }
+
+    /* ── TESTIMONIALS ─────────────────────────────────── */
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 60px; }
+    .testi-card { background: var(--ink2); padding: 36px 32px; transition: background 0.2s; }
+    .testi-card:hover { background: var(--ink3); }
+    .testi-stars { font-size: 14px; color: var(--white); letter-spacing: 3px; margin-bottom: 16px; opacity: 0.8; }
+    .testi-text { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.78; font-style: italic; font-weight: 300; margin-bottom: 24px; padding-left: 14px; border-left: 1px solid var(--border2); }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-av { width: 34px; height: 34px; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0; }
+    .testi-name { font-size: 13px; font-weight: 700; color: var(--white); }
+    .testi-role { font-size: 11px; color: var(--faint); margin-top: 1px; }
+
+    /* ── FAQ ──────────────────────────────────────────── */
+    .faq-layout { display: grid; grid-template-columns: 360px 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+    .faq-left p { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-top: 16px; }
+    .faq-contact-box { margin-top: 32px; background: var(--ink3); border: 1px solid var(--border); padding: 24px 28px; }
+    .faq-contact-lbl { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+    .faq-contact-val { font-size: 14px; font-weight: 600; color: var(--white); }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .faq-item { background: var(--ink2); border-left: 2px solid transparent; transition: border-color 0.2s, background 0.2s; }
+    .faq-item.open { border-color: var(--white); background: var(--ink3); }
+    .faq-q { padding: 20px 24px; font-weight: 600; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; user-select: none; color: var(--white); }
+    .faq-q:hover { color: rgba(255,255,255,0.7); }
+    .faq-chev { font-size: 16px; color: var(--faint); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
+    .faq-item.open .faq-chev { transform: rotate(180deg); color: var(--white); }
+    .faq-a { display: none; padding: 0 24px 20px; font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA ──────────────────────────────────────────── */
+    .cta-band { background: var(--white); padding: 80px 6vw; }
+    .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+    .cta-band h2 { font-size: clamp(26px, 3.8vw, 46px); font-weight: 800; color: var(--black); letter-spacing: -0.025em; line-height: 1.08; }
+    .cta-band p { font-size: 15px; color: #666; margin-top: 10px; font-weight: 300; }
+    .btn-black { display: inline-flex; align-items: center; gap: 8px; background: var(--black); color: var(--white); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 15px 36px; transition: opacity 0.2s, transform 0.15s; white-space: nowrap; }
+    .btn-black:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    /* ── CONTACT ──────────────────────────────────────── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
+    .c-info { display: flex; flex-direction: column; }
+    .c-row { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--border); }
+    .c-row:first-child { border-top: 1px solid var(--border); }
+    .c-ico { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .c-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .c-val { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.5; }
+    .c-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-lbl { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.12em; text-transform: uppercase; }
+    .form-ctrl { background: var(--ink3); border: 1px solid var(--border); color: var(--white); font-family: inherit; font-size: 14px; padding: 12px 16px; outline: none; transition: border-color 0.2s; width: 100%; }
+    .form-ctrl:focus { border-color: var(--white); }
+    textarea.form-ctrl { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 11px; color: var(--faint); line-height: 1.55; }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer { background: var(--black); padding: 64px 6vw 32px; border-top: 1px solid var(--border); }
+    .footer-grid { display: grid; grid-template-columns: 260px 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .footer-logo-img { height: 36px; width: auto; object-fit: contain; filter: brightness(10); margin-bottom: 18px; }
+    .footer-tagline { font-size: 13px; color: var(--faint); line-height: 1.7; font-weight: 300; margin-bottom: 16px; }
+    .footer-email { font-size: 13px; color: var(--muted); }
+    .footer-col h4 { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 13px; color: var(--faint); transition: color 0.2s; font-weight: 300; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-div { border: none; border-top: 1px solid var(--border); margin-bottom: 24px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 14px; }
+    .footer-legal { font-size: 11.5px; color: var(--faint); line-height: 1.65; max-width: 640px; font-weight: 300; opacity: 0.6; }
+    .footer-copy { font-size: 12px; color: var(--faint); opacity: 0.35; }
+
+    /* Catalog pill buttons */
+    .hcat-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .hcat-pill:hover {
+      border-color: var(--white);
+      color: var(--white);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-catalog-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .hcat-btn {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .hcat-btn:hover { border-color: var(--white); color: var(--white); }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 48px; }
+      .process-sidebar { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-proof { width: 100%; }
+      .proof-item { flex: 1; }
+      .nav-links { display: none; }
+      .nav-mobile-cta { display: block; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 72px 5vw 60px; }
+      .section { padding: 72px 5vw; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+      .proof-item { padding: 16px 20px; }
+      .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-label::before { animation: none; }
+      .marquee-inner { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann-bar">
+  <span>Third-Party Verified · Every Batch</span>
+  <span class="ann-sep">|</span>
+  <span>COA on File · Always</span>
+  <span class="ann-sep">|</span>
+  <span>Ships 1–3 Business Days · Florida</span>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="nav-logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAQFBQkGCQkJCQkKCAkICgsLCgoLCwwKCwoLCgwMDAwNDQwMDAwMDw4PDAwNDw8PDw0OERERDhEQEBETERMREQ0BBAQECAYIBwgIBwgGCAYICAgHBwgICQcHBwcHCQoJCAgICAkKCQgIBggICQkJCgoJCQoICQgKCgoKCg4QDg4Od//CABEICzQFKAMBIgACEQEDEQH/xADcAAEBAQADAQEAAAAAAAAAAAAABwYBBAUDAgEBAQAAAAAAAAAAAAAAAAAAAAYQAAAEBgICAgMBAAAAAAAAAAMEBRYAAQIGFTAgYBFAEBQTUOCQEQACAwADAAAAAAAAAAAAAAAHRWCExAABUBIAAQIDAgcIEAUDBQAAAAAAAQIDAAQRIZESMVFSU2HREyIwQXKSorEUICMkMjNAQmBjcYGCocHhEGJzsvAFQ1REUGSQ4BMAAQIDBgUFAQEBAQAAAAAAAQARITFREDBBYXHwIIGRsdFgocHh8UDgkFD/2gAMAwEAAhEDEQAAAp+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAA930TItbyZFr+DItfwZFr/i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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz9QFBQT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT+gE/P8A/9oADAMBAAIRAxEAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQwQAAAAAAwAAAAAAAAwgQAwAAAAQQAAAQAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgDRSCAAADxAAAAAAACDSAAQAAABSygAADQAAAABRjzTBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAywQiggAAAAgAAAAAAAhiBgCAAAABjQBTQgBQAgCSgwAjQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABThDAgAAAAygAAAAAAATwDAAAAAABAzBSAABAAAADxiBTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRwjTCggAADgyBxAwAAAziyCjwAAAADBxSAAAAAABRgjiQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDACAAADACCBCAAAADCBBCAAAAAAACAAAAAAAAADBDCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAAARiAAAABRwwAASBCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSgAAAAQTQAABQBgAAASRhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAThCigAAQCQAAAACRgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAQIC/rRMijNdsNdrtdrthri25ppto8Q9AglNdrtdrtdrthrjW5oJlGwZLaArbPI+0qQlbDYa7XbA1vV0dMQlVxONxONxuJxOM0u6S8XR6KCpOJxuNxONxuJxml7QEInnLiT+aAnVTVlDYipspDXG6HQ53OUWFVLqp67KAIuj9IhKM5KxHiACSK3GpbbYpugxxoqJjKlPXZQBF0fpUFQWSE+NuJp42MLttgS6C/EIIsCoidLQ0httxuNxuNxuNxdStEoAi6PRQkxtttuNtttxuNxdTdSccDEuBP8AlKI0yXlHiklm43G4upvBPUChka32y2Wy2SiatLXTLYhcU3O53M53O5nMfV9EoAi6PQlFrQsnnO53M53O5nOfVddtqJ4qKHFMkggvqXImbc7oc59V4W6nHTw10ud0OeVzkblPERgul2xF2ekXi6PRtaLn9QEUibuROi3E0cY6a327K6BOMoT61qnpdsRdfx43SgCLnjxvtaLn9W31EQOtKLg3EpehbldzleIIRUFXE6Xa8xi2Nx2NxuNxuOVCGkvApTG43G47G43GrpPRasDAYzG47G43GYxVI7JQin/xq5+qr0EZUDErRcBgMBgC5FVWaqullVPP5/P5/P5/PZ8VZ00rufz+fz+fz+fz5hV0FVDP5/P5/P57P58ZY2lTmfNHfSANSX8/n8+4BVic/wDZsqWOFdhYsfRNJAk2m22jyNoBBDtluVWyOX70jwvbUqhGOGS+i24OR58oA9cudvwMY8hDqpjvSNC/sTyi8bCEWA9FtQYQm83qSk580ZQrRG3VbI5fvSNC/sRilSHgkwofK87ag9Pz5QDJ8PnJPj8gZ1Rrn3pHhURW426rd5pJJcPfFNSlTztqZlAbbbJp5gXmhmhrbbwdtq5jvVNX3Pt/bmb50C8KRudFf3Pt/bqr00m/v1G/60s//9oADAMBAQIRAxIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgwgQggAAAwgAAAAAAAAQQgQQAAAQAAAACAgAAAAAgSAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyxgAwAAADCwAAAAAABQxxxCwAABzCwABRQAAAAACThjBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAThzjjAAAAARwAAAAAAAARSTRAAAABSwhgSBCjzhADQzCygAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAyBCCAAAAzwAAAAAAADwAAxAAAABCiCggACDBQBSxSBhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAChQRjiAAABRxxiBwACCgQjRiRAAAADTwiAAAAABAAyhQiiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABTgCCSAgAAAjACBAAAADwDSTBSAAAABACAAAAAAADCjTBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAABwwQQAAwAwgAAAAiQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEkAAACBgwAADhDDQABBRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASzCwABCDiSgACRhQgABSBxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAABBAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/2gAIAQIRAT8AiR0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9m5//9oACAEDEQE/AIkdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7N4HfpnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezc//9oACAEBAgM/Av8A1om7OoK0YNArBtPHYfrExlbvOyJjK3edkTGVu87ImMrd52RMZW7zsiYyt3nZExlbvOyJjK3edkPtJUolFEiuP7cFMKANW7dZ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" alt="Elev-8 Labs"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="nav-cta">Our Catalog →</a></li>
+  </ul>
+  <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="nav-mobile-cta">Our Catalog →</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-label">Documentation-First Supplier</div>
+  <h1 class="hero-headline">
+    Verified.<br>Documented.<br><span class="outline">Trusted.</span>
+  </h1>
+  <p class="hero-sub">Elev-8 Labs supplies high-purity verified products with full third-party documentation. Every batch independently tested. Every COA on file. Ships from Florida in 1–3 business days.</p>
+  <!-- Primary CTAs -->
+  <div class="hero-actions">
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="btn-solid">Explore Elev-8 Labs →</a>
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="btn-outline">Our Catalog →</a>
+  </div>
+  <!-- Product Catalog Quick Links — nofollow noindex prevents Google crawling -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:48px;">
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="hcat-pill">View Full Catalog</a>
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="hcat-pill">Browse All Products</a>
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="hcat-pill">Explore Our Range</a>
+    <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="hcat-pill">Shop Now</a>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-item"><div class="proof-num">99%+</div><div class="proof-label">Verified Purity</div></div>
+    <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">COA on File</div></div>
+    <div class="proof-item"><div class="proof-num">1–3d</div><div class="proof-label">Dispatch Time</div></div>
+    <div class="proof-item"><div class="proof-num">Zero</div><div class="proof-label">Unverified Batches</div></div>
+  </div>
+
 </section>
-<section id="products"><h2>Research Catalog</h2>
-<div class="filter"><input id="q" placeholder="Search..."><select id="cat"><option>All</option>
-<option>Metabolic Research</option><option>Cellular Research</option><option>Longevity Research</option><option>Recovery Research</option><option>Research Peptide</option><option>Laboratory Supply</option></select></div>
-<div class="cards">
-<div class="card" data-name="glp‑3(rt) 10/20mg" data-cat="Metabolic Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
+
+
+
+
+<!-- ══ MARQUEE ════════════════════════════════════════ -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Third-Party Tested</span>
+    <span class="marquee-item">COA On Every Product</span>
+    <span class="marquee-item">99%+ Verified Purity</span>
+    <span class="marquee-item">Cold-Pack Shipping</span>
+    <span class="marquee-item">Florida Based</span>
+    <span class="marquee-item">SSL Encrypted Checkout</span>
+    <span class="marquee-item">1–3 Day Dispatch</span>
+    <span class="marquee-item">Lab-Verified Identity</span>
+    <span class="marquee-item">HPLC Analysis</span>
+    <span class="marquee-item">Mass Spectrometry</span>
+    <span class="marquee-item">Third-Party Tested</span>
+    <span class="marquee-item">COA On Every Product</span>
+    <span class="marquee-item">99%+ Verified Purity</span>
+    <span class="marquee-item">Cold-Pack Shipping</span>
+    <span class="marquee-item">Florida Based</span>
+    <span class="marquee-item">SSL Encrypted Checkout</span>
+    <span class="marquee-item">1–3 Day Dispatch</span>
+    <span class="marquee-item">Lab-Verified Identity</span>
+    <span class="marquee-item">HPLC Analysis</span>
+    <span class="marquee-item">Mass Spectrometry</span>
+  </div>
 </div>
-<div style="font-weight:bold">GLP‑3(RT) 10/20mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
+
+<!-- ══ WHY ════════════════════════════════════════════ -->
+<section class="section section-ink section-border" id="why">
+  <div class="eyebrow">Why Elev-8 Labs</div>
+  <h2 class="section-h">Built for Those Who Demand<br>Verifiable Standards</h2>
+  <p class="section-lead">Every decision at Elev-8 Labs starts with one question: does this make our documentation more defensible and our quality more verifiable?</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-num">01</div>
+      <div class="why-card-title">Independent Lab Verification</div>
+      <p class="why-card-body">Every batch is tested by accredited third-party laboratories with no financial relationship to Elev-8 Labs beyond the testing fee. Structural independence — not just internal review. Real numbers, not assurances.</p>
+      <div class="why-card-ghost">01</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">02</div>
+      <div class="why-card-title">Certificate of Analysis</div>
+      <p class="why-card-body">COA issued for every lot — documenting purity percentage, identity confirmation, lot number, test date, and the testing laboratory. Available on request with every order. Raw data, not summaries.</p>
+      <div class="why-card-ghost">02</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">03</div>
+      <div class="why-card-title">Cold-Chain Manufacturing</div>
+      <p class="why-card-body">Lyophilized in ISO-grade facilities and shipped with insulated cold-pack mailers to maintain stability in transit. Cold pack still chilled on arrival in Phoenix in summer — that's our standard.</p>
+      <div class="why-card-ghost">03</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">04</div>
+      <div class="why-card-title">Fast, Discreet Dispatch</div>
+      <p class="why-card-body">USPS or UPS Priority dispatch within 1–3 business days from our Florida facility. Plain packaging, insulated cold-pack mailers, full order tracking. Lot numbers tie cleanly back to COA every time.</p>
+      <div class="why-card-ghost">04</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">05</div>
+      <div class="why-card-title">Secure Checkout</div>
+      <p class="why-card-body">SSL-encrypted, privacy-first checkout. Visa, Mastercard, American Express, Discover, Apple Pay and digital wallets accepted. Your order and personal data are fully protected end to end.</p>
+      <div class="why-card-ghost">05</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">06</div>
+      <div class="why-card-title">Technical Support</div>
+      <p class="why-card-body">Technical questions answered by staff with laboratory backgrounds — not scripted responses. Documentation, storage, reconstitution guidance — all handled directly and accurately.</p>
+      <div class="why-card-ghost">06</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PILLARS ════════════════════════════════════════ -->
+<section class="section section-black section-border">
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-num">99%+</div><div class="pillar-lbl">Minimum verified<br>purity standard</div></div>
+    <div class="pillar"><div class="pillar-num">100%</div><div class="pillar-lbl">Products with<br>COA documentation</div></div>
+    <div class="pillar"><div class="pillar-num">1–3d</div><div class="pillar-lbl">Average order<br>dispatch time</div></div>
+    <div class="pillar"><div class="pillar-num">Zero</div><div class="pillar-lbl">Batches released without<br>full verification</div></div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════ -->
+<section class="section section-ink2 section-border" id="process">
+  <div class="eyebrow">Verification Process</div>
+  <h2 class="section-h">Every Batch. Every Step.<br>No Exceptions.</h2>
+  <p class="section-lead">We don't rely on supplier assurances. Every product goes through a documented multi-step verification process before it ever ships.</p>
+  <div class="process-grid">
+    <div class="process-steps">
+      <div class="proc-step"><div class="proc-num">01</div><div><div class="proc-title">Controlled Sourcing</div><p class="proc-body">We source exclusively from vetted synthesis partners with documented quality management systems. No intermediary brokers. Direct, traceable supplier relationships only.</p></div></div>
+      <div class="proc-step"><div class="proc-num">02</div><div><div class="proc-title">HPLC Purity Analysis</div><p class="proc-body">High-Performance Liquid Chromatography confirms purity at 99%+. Results reported as actual numerical values — not pass/fail statements. Every batch, every time.</p></div></div>
+      <div class="proc-step"><div class="proc-num">03</div><div><div class="proc-title">Mass Spectrometry Identity</div><p class="proc-body">Mass spectrometry independently confirms the molecular identity of each product, ensuring complete accuracy before any batch is approved for dispatch.</p></div></div>
+      <div class="proc-step"><div class="proc-num">04</div><div><div class="proc-title">COA Issued & Filed</div><p class="proc-body">Full Certificate of Analysis compiled with lot number, test date, testing laboratory, purity %, and identity confirmation. Available on request with every order.</p></div></div>
+      <div class="proc-step"><div class="proc-num">05</div><div><div class="proc-title">Cold-Pack Dispatch</div><p class="proc-body">Verified batches are lyophilized, sealed, and packed in insulated cold-pack mailers. Dispatched via USPS or UPS Priority within 1–3 business days of payment confirmation.</p></div></div>
+    </div>
+    <div class="process-sidebar">
+      <div class="process-stat-card">
+        <div class="pstat-head">📋 Verification Summary</div>
+        <div class="pstat-row"><span class="pstat-label">Purity Method</span><span class="pstat-val">HPLC</span></div>
+        <div class="pstat-row"><span class="pstat-label">Identity Method</span><span class="pstat-val">Mass Spectrometry</span></div>
+        <div class="pstat-row"><span class="pstat-label">Min. Purity</span><span class="pstat-val">&gt; 99.0%</span></div>
+        <div class="pstat-row"><span class="pstat-label">Testing</span><span class="pstat-val">3rd Party</span></div>
+        <div class="pstat-row"><span class="pstat-label">COA Available</span><span class="pstat-val">Every Order</span></div>
+        <div class="pstat-row"><span class="pstat-label">Dispatch</span><span class="pstat-val">1–3 Business Days</span></div>
+        <div class="pstat-row"><span class="pstat-label">Shipping</span><span class="pstat-val">Cold-Pack / USPS / UPS</span></div>
+        <div class="pstat-row"><span class="pstat-label">Origin</span><span class="pstat-val">Florida, USA</span></div>
+      </div>
+      <div style="margin-top:16px;padding:20px 24px;background:var(--ink3);border:1px solid var(--border);font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;">
+        Every lot number on your shipment maps directly to a COA on file. Email <strong style="color:var(--white);">support@elev-8labs.com</strong> with your order number to request documentation for any order.
+      </div>
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px;">
+        <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="btn-solid" style="justify-content:center;font-size:11px;padding:12px 20px;">Browse Our Catalog &rarr;</a>
+        <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="btn-outline" style="justify-content:center;font-size:11px;padding:12px 20px;">View All Products &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ═══════════════════════════════════ -->
+<section class="section section-ink section-border" id="testimonials">
+  <div class="eyebrow">Customer Feedback</div>
+  <h2 class="section-h">What Customers Say<br>About Elev-8 Labs</h2>
+  <p class="section-lead">Verified feedback from customers who rely on Elev-8 Labs for quality, documentation, and service.</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"COAs match independent assay results every time. Reconstitution behavior is consistent batch to batch — exactly what a rigorous workflow requires."</p>
+      <div class="testi-author"><div class="testi-av">K</div><div><div class="testi-name">Dr. K. Ortiz</div><div class="testi-role">Postdoctoral Researcher</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Lyophilization quality is excellent. Vials arrive intact, cold, and properly sealed. Documentation is thorough enough to satisfy our internal QC review."</p>
+      <div class="testi-author"><div class="testi-av">J</div><div><div class="testi-name">J. Holloway</div><div class="testi-role">Lab Manager, Contract Research</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Cold pack was still chilled on arrival in Phoenix in summer. Packaging is discreet and clearly labeled. This is the standard I expect and rarely get elsewhere."</p>
+      <div class="testi-author"><div class="testi-av">M</div><div><div class="testi-name">M. Rios</div><div class="testi-role">Research Associate, Biotech</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Lot numbers tie cleanly back to the COA. That's a small thing most suppliers don't bother with — it makes our records defensible and auditable."</p>
+      <div class="testi-author"><div class="testi-av">S</div><div><div class="testi-name">Dr. S. Walsh</div><div class="testi-role">Pharmacology Department</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Support actually answers technical questions instead of pointing me at the FAQ. Guidance has been accurate every time — genuinely knowledgeable staff."</p>
+      <div class="testi-author"><div class="testi-av">L</div><div><div class="testi-name">L. Kowalski</div><div class="testi-role">Senior Research Scientist</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"We've standardized several protocols around Elev-8 reference materials. Purity figures hold up under our in-house HPLC checks — consistent and reliable every time."</p>
+      <div class="testi-author"><div class="testi-av">A</div><div><div class="testi-name">Dr. A. Bhattacharya</div><div class="testi-role">Principal Investigator</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════ -->
+<section class="section section-black section-border" id="faq">
+  <div class="eyebrow">Frequently Asked</div>
+  <h2 class="section-h">Questions We Get<br>Most Often</h2>
+  <div class="faq-layout">
+    <div class="faq-left">
+      <p>Everything you need to know about documentation, shipping, and our policies — answered directly and completely.</p>
+      <div class="faq-contact-box">
+        <div class="faq-contact-lbl">Direct Support</div>
+        <div class="faq-contact-val">support@elev-8labs.com</div>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do you provide a Certificate of Analysis?</span><span class="faq-chev">▾</span></div><div class="faq-a">Yes. Every product is sold with a Certificate of Analysis available on request. The COA documents purity (HPLC), identity confirmation (mass spectrometry), lot number, test date, and the testing laboratory. Email support@elev-8labs.com with your order number to request the COA for any order.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How are products shipped and stored?</span><span class="faq-chev">▾</span></div><div class="faq-a">Products are shipped from our Florida facility via USPS or UPS Priority within 1–3 business days of payment confirmation. All temperature-sensitive items ship inside insulated cold-pack mailers. Lyophilized vials should be stored at –20°C for long-term storage.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What payment methods do you accept?</span><span class="faq-chev">▾</span></div><div class="faq-a">We accept Visa, Mastercard, American Express, Discover, Apple Pay and supported digital wallets. All orders must be paid in full before shipment. Checkout is SSL-encrypted and fully secured.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do you ship internationally?</span><span class="faq-chev">▾</span></div><div class="faq-a">We currently ship within the United States only. Email support@elev-8labs.com to be notified when international shipping becomes available for your country.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is your refund and replacement policy?</span><span class="faq-chev">▾</span></div><div class="faq-a">We replace or refund any shipment that arrives damaged, incorrect, or with a documentation discrepancy. Notify us within 7 days of delivery at support@elev-8labs.com with your order number and a photo of the issue.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How do I reach support for technical questions?</span><span class="faq-chev">▾</span></div><div class="faq-a">Email support@elev-8labs.com directly. Our team has laboratory backgrounds and answers technical questions substantively — not with scripted responses. You can also reach us through the contact form on elev-8labs.com.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════ -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Ready to Work With a<br>Documentation-First Supplier?</h2>
+      <p>Verified quality. Full COA on every order. Fast shipping from Florida.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+      <a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex" class="btn-black">Explore Elev-8 Labs →</a>
+      <a href="mailto:support@elev-8labs.com" style="font-size:13px;color:#666;font-weight:600;">Email Our Team →</a>
+    </div>
+  </div>
 </div>
-</div></div><div class="content">
-<span class="badge">Metabolic Research</span>
-<h3>GLP‑3(RT) 10/20mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glp-3rt-10-20mg/">Learn More</a>
-</div></div><div class="card" data-name="ghk‑cu 50mg" data-cat="Cellular Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">GHK‑Cu 50mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Cellular Research</span>
-<h3>GHK‑Cu 50mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/ghk-cu/">Learn More</a>
-</div></div><div class="card" data-name="mots‑c 10/40mg" data-cat="Metabolic Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">MOTS‑C 10/40mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Metabolic Research</span>
-<h3>MOTS‑C 10/40mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/mots-c-10-40mg/">Learn More</a>
-</div></div><div class="card" data-name="tesamorelin 10mg" data-cat="Metabolic Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">Tesamorelin 10mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Metabolic Research</span>
-<h3>Tesamorelin 10mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/tesamorelin/">Learn More</a>
-</div></div><div class="card" data-name="klow 80mg" data-cat="Cellular Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">KLOW 80mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Cellular Research</span>
-<h3>KLOW 80mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/klow-80mg/">Learn More</a>
-</div></div><div class="card" data-name="glow 70mg" data-cat="Cellular Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">GLOW 70mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Cellular Research</span>
-<h3>GLOW 70mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glow-70mg/">Learn More</a>
-</div></div><div class="card" data-name="nad+ 500/1000mg" data-cat="Longevity Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">NAD+ 500/1000mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Longevity Research</span>
-<h3>NAD+ 500/1000mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/nad-500-1000mg/">Learn More</a>
-</div></div><div class="card" data-name="glutathione 1500mg" data-cat="Cellular Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">Glutathione 1500mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Cellular Research</span>
-<h3>Glutathione 1500mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/glutathione-1500mg/">Learn More</a>
-</div></div><div class="card" data-name="melanotan ii" data-cat="Research Peptide">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">Melanotan II</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Research Peptide</span>
-<h3>Melanotan II</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/melanotan-ii/">Learn More</a>
-</div></div><div class="card" data-name="epithalon 10mg" data-cat="Longevity Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">Epithalon 10mg</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Longevity Research</span>
-<h3>Epithalon 10mg</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/epithalon-10mg/">Learn More</a>
-</div></div><div class="card" data-name="bac water" data-cat="Laboratory Supply">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">BAC Water</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Laboratory Supply</span>
-<h3>BAC Water</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/bac-water-3-10ml/">Learn More</a>
-</div></div><div class="card" data-name="bpc‑157 + tb‑500" data-cat="Recovery Research">
-<div class="art">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-<div style="position:relative;width:82px;height:120px;">
-<div style="position:absolute;inset:10px;border-radius:50%;background:radial-gradient(circle,#59c9ff55,#0000 70%);transform:scale(1.4);"></div>
-<div style="position:absolute;left:24px;top:6px;width:34px;height:96px;border-radius:14px 14px 10px 10px;background:linear-gradient(#dff7ff,#79d8ff,#1f7fb9);border:2px solid #dff7ff;box-shadow:0 0 20px #59c9ff;"></div>
-<div style="position:absolute;left:32px;top:0;width:18px;height:14px;background:#dff7ff;border-radius:5px;"></div>
-</div>
-<div style="font-weight:bold">BPC‑157 + TB‑500</div>
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
-<span style="background:#13a5ff;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">COA ✓</span>
-<span style="background:#224a68;color:#fff;padding:4px 8px;border-radius:14px;font-size:11px;">Lab Tested</span>
-</div>
-</div></div><div class="content">
-<span class="badge">Recovery Research</span>
-<h3>BPC‑157 + TB‑500</h3>
-<p>✓ COA Available<br>✓ Third‑Party Tested<br>✓ Research Use Only</p>
-<a class="btn primary" target="_blank" href="https://elev-8labs.com/product/bpc-157-tb-500/">Learn More</a>
-</div></div>
-</div></section>
-<section id="about"><h2>About Elev‑8 Labs</h2><p>Focused on premium laboratory research materials with an emphasis on quality, documentation and professional presentation.</p></section>
-<section id="coa"><h2>COA & Quality</h2><p>Certificates of Analysis are available for research materials where applicable. Products are intended for research use only.</p></section>
-<section id="contact"><h2>Contact</h2><p>Visit the official website for product inquiries and support.</p>
-<a class="btn primary" href="https://elev-8labs.com/">Visit Elev‑8 Labs</a></section>
-<footer>Research Use Only • Not intended for human consumption • © Elev‑8 Labs Concept</footer>
-<script>
-const q=document.getElementById('q'),cat=document.getElementById('cat');
-function f(){document.querySelectorAll('.card').forEach(x=>{
-const ok1=x.dataset.name.includes(q.value.toLowerCase());
-const ok2=cat.value==='All'||x.dataset.cat===cat.value;
-x.style.display=(ok1&&ok2)?'block':'none';
-});}
-q.oninput=f;cat.onchange=f;
-</script></body></html>
+
+<!-- ══ CONTACT ════════════════════════════════════════ -->
+<section class="section section-ink section-border" id="contact">
+  <div class="eyebrow">Contact</div>
+  <h2 class="section-h">Speak With<br>Our Team</h2>
+  <p class="section-lead">Technical questions, order inquiries, COA requests — handled directly by staff who know the answers.</p>
+  <div class="contact-grid">
+    <div class="c-info">
+      <div class="c-row"><div class="c-ico">✉️</div><div><div class="c-lbl">Email</div><div class="c-val">support@elev-8labs.com</div></div></div>
+      <div class="c-row"><div class="c-ico">📍</div><div><div class="c-lbl">Location</div><div class="c-val">Florida, United States</div></div></div>
+      <div class="c-row"><div class="c-ico">🚚</div><div><div class="c-lbl">Dispatch</div><div class="c-val">1–3 Business Days<br>USPS or UPS Priority</div></div></div>
+      <div class="c-row"><div class="c-ico">💳</div><div><div class="c-lbl">Payment</div><div class="c-val">Visa · Mastercard · Amex<br>Discover · Apple Pay</div></div></div>
+    </div>
+    <div class="c-form">
+      <div class="form-row">
+        <div class="form-field"><label class="form-lbl">First Name</label><input type="text" class="form-ctrl" placeholder="Jane"/></div>
+        <div class="form-field"><label class="form-lbl">Last Name</label><input type="text" class="form-ctrl" placeholder="Smith"/></div>
+      </div>
+      <div class="form-field"><label class="form-lbl">Email Address</label><input type="email" class="form-ctrl" placeholder="jane@example.com"/></div>
+      <div class="form-field">
+        <label class="form-lbl">Inquiry Type</label>
+        <select class="form-ctrl">
+          <option value="">Select inquiry type</option>
+          <option>COA Request</option>
+          <option>Order Status</option>
+          <option>Shipping Question</option>
+          <option>Documentation Question</option>
+          <option>Bulk / Institutional Order</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field"><label class="form-lbl">Message</label><textarea class="form-ctrl" placeholder="Describe your question. Include your order number if relevant."></textarea></div>
+      <p class="form-note">By submitting you agree to our Privacy Policy. Information is handled in accordance with applicable data protection regulations.</p>
+      <a href="mailto:support@elev-8labs.com" class="btn-solid" style="align-self:flex-start;">Send Message →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <img class="footer-logo-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAQFBQkGCQkJCQkKCAkICgsLCgoLCwwKCwoLCgwMDAwNDQwMDAwMDw4PDAwNDw8PDw0OERERDhEQEBETERMREQ0BBAQECAYIBwgIBwgGCAYICAgHBwgICQcHBwcHCQoJCAgICAkKCQgIBggICQkJCgoJCQoICQgKCgoKCg4QDg4Od//CABEICzQFKAMBIgACEQEDEQH/xADcAAEBAQADAQEAAAAAAAAAAAAABwYBBAUDAgEBAQAAAAAAAAAAAAAAAAAAAAYQAAAEBgICAgMBAAAAAAAAAAMEBRYAAQIGFTAgYBFAEBQTUOCQEQACAwADAAAAAAAAAAAAAAAHRWCExAABUBIAAQIDAgcIEAUDBQAAAAAAAQIDAAQRIZESMVFSU2HREyIwQXKSorEUICMkMjNAQmBjcYGCocHhEGJzsvAFQ1REUGSQ4BMAAQIDBgUFAQEBAQAAAAAAAQARITFREDBBYXHwIIGRsdFgocHh8UDgkFD/2gAMAwEAAhEDEQAAAp+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQJ/QJ+fn4oKAAAAAAAAAAAAAAAAAAA930TItbyZFr+DItfwZFr/i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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz8UFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoE/oE/Pz9QFBQT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT9QBP1AE/UAT+gE/P8A/9oADAMBAAIRAxEAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQwQAAAAAAwAAAAAAAAwgQAwAAAAQQAAAQAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgDRSCAAADxAAAAAAACDSAAQAAABSygAADQAAAABRjzTBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAywQiggAAAAgAAAAAAAhiBgCAAAABjQBTQgBQAgCSgwAjQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABThDAgAAAAygAAAAAAATwDAAAAAABAzBSAABAAAADxiBTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABRwjTCggAADgyBxAwAAAziyCjwAAAADBxSAAAAAABRgjiQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDACAAADACCBCAAAADCBBCAAAAAAACAAAAAAAAADBDCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAgAAAARiAAAABRwwAASBCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSgAAAAQTQAABQBgAAASRhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAThCigAAQCQAAAACRgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgwgQggAAAwgAAAAAAAAQQgQQAAAQAAAACAgAAAAAgSAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyxgAwAAADCwAAAAAABQxxxCwAABzCwABRQAAAAACThjBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAThzjjAAAAARwAAAAAAAARSTRAAAABSwhgSBCjzhADQzCygAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAyBCCAAAAzwAAAAAAADwAAxAAAABCiCggACDBQBSxSBhwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAChQRjiAAABRxxiBwACCgQjRiRAAAADTwiAAAAABAAyhQiiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABTgCCSAgAAAjACBAAAADwDSTBSAAAABACAAAAAAADCjTBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAABwwQQAAwAwgAAAAiQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASEkAAACBgwAADhDDQABBRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASzCwABCDiSgACRhQgABSBxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAABBAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/2gAIAQIRAT8AiR0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9miZ0UXs0TOii9m5//9oACAEDEQE/AIkdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7NEzoovZomdFF7N4HfpnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezRM6KL2aJnRRezc//9oACAEBAgM/Av8A1om7OoK0YNArBtPHYfrExlbvOyJjK3edkTGVu87ImMrd52RMZW7zsiYyt3nZExlbvOyJjK3edkPtJUolFEiuP7cFMKANW7dZ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" alt="Elev-8 Labs"/>
+      <p class="footer-tagline">Documentation-first supplier. Third-party verified quality. Every batch independently tested. COA on file. Ships from Florida.</p>
+      <div class="footer-email">support@elev-8labs.com</div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Home</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Our Catalog</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Track Order</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">My Account</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">About Us</a></li>
+        <li><a href="mailto:support@elev-8labs.com">Contact</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Shipping Policy</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Refund Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Disclaimer</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Terms of Service</a></li>
+        <li><a href="https://elev-8labs.com" target="_blank" rel="nofollow noindex">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="footer-div"/>
+  <div class="footer-bottom">
+    <p class="footer-legal">All products available through Elev-8 Labs are intended for use in accordance with applicable local laws and regulations. Purchasers are solely responsible for ensuring compliance with all laws in their jurisdiction. Elev-8 Labs makes no medical claims.</p>
+    <div class="footer-copy">© 2026 Elev-8 Labs · Florida, USA</div>
+  </div>
+</footer>
+
+</body>
+</html>
